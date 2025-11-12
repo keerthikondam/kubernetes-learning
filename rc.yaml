@@ -1,14 +1,17 @@
+#run this commands to verify kubectl get rc
+#kubectl get pods -l env=demo
+
 apiVersion: v1
-kind: replicationController
+kind: ReplicationController
 metadata:
-  name: nginx-replicationController
+  name: nginx-replicationcontroller
   labels:
     env: demo
 spec:
   template:
     metadata:
       labels:
-        eve: demo
+        env: demo
       name: nginx-pod
     spec:
       containers:
